@@ -1,6 +1,6 @@
 # smart-approval-loop
 
-承認要求を補助LLMで判定し、秘密を伏せたイベントを JSONL に記録・集計して、ポリシー改善につなげる OSS プラグインです。判定を自動適用する範囲などの詳細仕様は、親仕様 https://github.com/Keisei-Akiya/wiki/issues/4 を参照してください。
+承認要求を補助LLMで判定し、秘密を伏せたイベントを JSONL に記録・集計して、ポリシー改善につなげる OSS プラグインです。判定を自動適用する範囲などの詳細仕様は、仕様 https://github.com/Keisei-Akiya/smart-approval-loop/issues/11 を参照してください（由来: https://github.com/Keisei-Akiya/wiki/issues/4）。
 
 ## 構成
 
