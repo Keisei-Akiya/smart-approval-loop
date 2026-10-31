@@ -46,6 +46,12 @@ uv sync
 uv run pytest
 ```
 
+## 判定器
+
+`smart_approval_loop.core.judges` は `Judge` プロトコルと `APPROVE` / `DENY` / `ESCALATE` の結果型を提供します。実装は `ChatCompletionsJudge` または `JevJudge` を注入して切り替えます。通信 transport は呼び出し側で与えるため、接続先と認証情報を明示でき、コアは実ネットワークやキーに依存しません。Jev は確率しきい値(既定 0.8)を下回るとエスカレートします。
+
+`judge_safely` は例外、タイムアウト、不正な応答を `ESCALATE` に変換し、`judge_and_record` は伏せ字済みイベント・判定・理由を JSONL に追記します。外部送信を行うアダプタも伏せ字後の内容だけを渡します。自動でポリシーを変更しません。
+
 ## ライセンス
 
 ライセンス候補と決定時期は [`docs/license-policy.md`](docs/license-policy.md) を参照してください。現時点では LICENSE ファイルを置いていません。
