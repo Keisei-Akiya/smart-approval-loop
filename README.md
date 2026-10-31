@@ -14,7 +14,28 @@
 
 ## 対応環境
 
-Claude Code、Codex、Hermes の承認要求フックを対象とします。各環境の具体的な連携方法は今後の実装で追加します。
+Claude Code、Codex、Hermes の承認要求フックを対象とします。Claude Code の `PermissionRequest` は以下の設定例で記録できます（`uv` とリポジトリの配置先を環境に合わせてください）。ログ形式は [`docs/event-schema.md`](docs/event-schema.md) を参照してください。
+
+```json
+{
+  "hooks": {
+    "PermissionRequest": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "uv run --directory /path/to/smart-approval-loop python -m smart_approval_loop.adapters.claude_code",
+            "timeout": 5
+          }
+        ]
+      }
+    ]
+  }
+}
+```
+
+ログ保存先は `SMART_APPROVAL_LOOP_LOG` 環境変数で変更できます。
 
 ## 開発
 
