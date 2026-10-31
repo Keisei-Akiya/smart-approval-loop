@@ -1,0 +1,1 @@
+"""Smart approval loop plugin."""

@@ -1,0 +1,19 @@
+[project]
+name = "smart-approval-loop"
+version = "0.1.0"
+description = "承認要求を補助LLMで判定し、秘密を伏せて記録・集計するプラグイン"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = []
+
+[dependency-groups]
+dev = [
+    "pytest>=8.0",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
