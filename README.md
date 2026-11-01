@@ -35,7 +35,7 @@ Claude Code、Codex、Hermes の承認要求フックを対象とします。Cla
 }
 ```
 
-ログ保存先は `SMART_APPROVAL_LOOP_LOG` 環境変数で変更できます。Codex の `PermissionRequest` hooks.json 例、タイムアウト検証、`/hooks` による信頼手順は [`docs/codex-hook.md`](docs/codex-hook.md) を参照してください。Codex アダプタは現時点で判定器未接続のため、記録後に通常の承認へ戻ります。
+ログ保存先は `SMART_APPROVAL_LOOP_LOG` 環境変数で変更できます。集計 CLI は `uv run python -m smart_approval_loop.aggregate <ログ>` で実行します。`--agent codex`、`--since YYYY-MM-DD`、`--until YYYY-MM-DD` で絞り込めます。全件数・判定別・エージェント別の件数と、`ESCALATE` (過剰エスカレーション候補)・`DENY` (拒否) の一覧を JSON で出力します。Codex の `PermissionRequest` hooks.json 例、タイムアウト検証、`/hooks` による信頼手順は [`docs/codex-hook.md`](docs/codex-hook.md) を参照してください。Codex アダプタは現時点で判定器未接続のため、記録後に通常の承認へ戻ります。
 
 ## 開発
 
