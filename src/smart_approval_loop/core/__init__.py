@@ -24,8 +24,10 @@ def redact(value: Any) -> Any:
     return value
 
 def record_event(event: dict[str, Any], path: str | Path) -> None:
+    target = Path(path)
+    target.parent.mkdir(parents=True, exist_ok=True)
     line = json.dumps(redact(event), ensure_ascii=False, separators=(",", ":"))
-    with Path(path).open("a", encoding="utf-8") as stream:
+    with target.open("a", encoding="utf-8") as stream:
         stream.write(line + "\n")
 
 def common_event(agent: str, event_type: str, payload: dict[str, Any]) -> dict[str, Any]:

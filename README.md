@@ -35,7 +35,7 @@ Claude Code、Codex、Hermes の承認要求フックを対象とします。Cla
 }
 ```
 
-ログ保存先は `SMART_APPROVAL_LOOP_LOG` 環境変数で変更できます。
+ログ保存先は `SMART_APPROVAL_LOOP_LOG` 環境変数で変更できます。Codex の `PermissionRequest` hooks.json 例、タイムアウト検証、`/hooks` による信頼手順は [`docs/codex-hook.md`](docs/codex-hook.md) を参照してください。Codex アダプタは現時点で判定器未接続のため、記録後に通常の承認へ戻ります。
 
 ## 開発
 
